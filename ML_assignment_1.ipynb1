@@ -1,0 +1,143 @@
+{
+  "cells": [
+    {
+      "metadata": {
+        "collapsed": true
+      },
+      "cell_type": "markdown",
+      "source": "## 機械学習・データ分析(2019)　課題1\n\n### このnotebookには、いくつかの課題が記載されています。\n### 先頭から順番に、指示に従ってPython Codeをcellに記述してください。\n### codeを記述するcellは、各自適切に生成してください。\n\n### 課題提出方法\n#### 各自のGitHubに、学籍番号_MD1（たとえば、C180001_MD1)という名称のrepositoryを作成してください。\n#### このnotebookを各自のGitHubのリポジトリ（学籍番号_MD1)へコピーしてください。\n#### 各自のGitHubのリポジトリをoffice 365のメールアカウントを使用して、sugimura@ccg.ac.jpへ送信してください。メールの件名は、学籍番号_MD1としてください。\n##### 【重要】指定された方法で課題を提出することも課題に含まれています。"
+    },
+    {
+      "metadata": {},
+      "cell_type": "markdown",
+      "source": "#### では、課題を始めます。\n\n##### 第1問：最初に、必要なモジュールを読み込みましょう。\n\n読み込むモジュールは、\n\n+ numpy\n+ pandas\n+ matplotlib.pyplot\n\nです。\n\nさらに、このnotebookの中にグラフを表示できるようにするための命令も記述しましょう。\n"
+    },
+    {
+      "metadata": {},
+      "cell_type": "markdown",
+      "source": "##### 第2問：　学生名簿CSVファイル ICT2019.csvをデータフレーム型のデータdf_ict1に読み込んでください。\n\n##### ただし、ICT2019.csvには、indexとして用いることができるIDというcolumnが存在していますが、\n##### 新たにindexが付加されるように読み込んでください。\n"
+    },
+    {
+      "metadata": {},
+      "cell_type": "markdown",
+      "source": "##### 第3問：学生名簿の学生データをID（学籍番号）の昇順に並べ替えて表示してください。並べ替えたデータを保存する必要はありません。\n##### ここで、学籍番号の昇順とは、C180000<C180001<C180002<・・・＜C180999<C190000<C190001<・・・<C190999となるような順序のことです。\n\n##### pandasモジュールには、データフレームを値に基づいて並び替えるためのメソッドsort_values()があります。\n##### sort_values()メソッドを使ってください。sort_values()メソッドは、ソートに利用するcolumnを引数としてもちます。\n##### たとえば、IDという名称のcolumnを利用するならば、引数には、by='ID' を設定します。\n"
+    },
+    {
+      "metadata": {},
+      "cell_type": "markdown",
+      "source": "##### 第4問：データフレーム型データdf_ict1に関して、classごとの学生数をカウントしてください。\n##### 解答は、\n##### 2S: 2名\n##### 4M: 25名\n##### 3M: 23名\n##### のように出力してください。\n\n##### ただし、df_ict1の列(column)CLASSの値は、たとえば、df_ict1.loc[:, 'CLASS']などによって取得できる。\n##### df_ict1.loc[:, 'CLASS']がdf_ict1からどんなデータを取得できるかは、各自確かめてください。\n\n\n\n"
+    },
+    {
+      "metadata": {},
+      "cell_type": "markdown",
+      "source": "##### 第5問：第4問と同様に、classごとの学生数をカウントしてください。\n##### ただし、ここでは、Pythonのメソッドsum()を利用してみよう。\n##### sum()は、リストの全ての要素の合計を求めます。\n##### リストの要素がbool型であるとき、sum()は、値がTrueである要素の個数を求めることになります。\n##### なお、sum()関数には、numpy.sum()というnumpyモジュールのsum()もあります。"
+    },
+    {
+      "metadata": {
+        "trusted": true
+      },
+      "cell_type": "markdown",
+      "source": "##### 第6問：第4問で求めた各クラスの学生数を円グラフで表示してください。"
+    },
+    {
+      "metadata": {
+        "trusted": true
+      },
+      "cell_type": "markdown",
+      "source": "##### 第7問　リスト内包表記を使用して、2桁の奇数からなるリストを作成してください。"
+    },
+    {
+      "metadata": {},
+      "cell_type": "markdown",
+      "source": "##### 第8問：Titanic号csvファイルtitanic.csvをデータフレーム型のデータdf_titanic1に読み込み、先頭の5行を表示させてください。\n##### 読み込む際に、新たなIDをデータに付加しnaiさい。"
+    },
+    {
+      "metadata": {},
+      "cell_type": "markdown",
+      "source": "##### 第9問：pandasのmean関数を用いることなく、全体の平均年齢、生存者の平均年齢、死亡者の平均年齢を求めなさい。\n##### ただし、画面に表示する小数点以下の桁数は2桁としてください。\n\n##### （参考）DataFrame型データdf_titanic1の要素の値を取得する方法には、\n+ loc\n+ iloc\n+ at\n+ iat\n##### などがあります。\n##### locやilocは、行と列の範囲を指定して取得するため、取り出されたデータもDataFrame型になります。\n##### これに対して、atやiatは、指定した行と列に存在する1つの要素の値を取り出すことができます。\n##### また、locやatは、行と列のラベル名を指定しますが、ilocやiatは、行番号と列番号を指定します。"
+    },
+    {
+      "metadata": {},
+      "cell_type": "markdown",
+      "source": "#### 第10問：pandasのmean関数を用いて、全体の平均年齢、生存者の平均年齢、及び、死亡者の平均年齢を求めてください。\n#### それぞれの平均年齢を求めて表示するコードは、1行で記述することができるので、全部で3行のコードだけで解答することができます。\n\n##### DataFrame型データから特定の条件を満たす行を抽出する方法\n+ 比較演算子を用いて'Survived'が1である行を抽出する方法例　----　df_titanic1[df_titanic1['Survived'] == 1]\n+ query()メソッドを用いて'Survived'が1である行を抽出する方法例 ----- df_titanic1.query('Survived == 1')\n\n##### DataFtame型データの特定の列の平均を求める方法\n##### DataFrame型データdf_titanic1の列'Age'の平均を求めるには、df_titanic1['Age'].mean()　のように記述します。返り値は、この特定の列のデータ型となります。\n##### すべての列の平均を求めるには、df_titanic1.mean()　とします。このとき、返り値のデータ型は、Series型です。\n"
+    },
+    {
+      "metadata": {
+        "trusted": true
+      },
+      "cell_type": "code",
+      "source": "import pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n\n\ndf_ict1 = pd.read_csv('ICT2019 .csv', index_col = 'ID')\nprint(df_ict1)",
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": "       学籍番号 英称学科 CLASS                          氏名  score\nID                                                       \n1   C180002   IW    2S                      髙見澤　弘和      1\n2   C180005   IW    2S                       弘中　哲哉      2\n3   C190314   IM    3M              NGUYEN THE ANH      3\n4   C190342   IM    3M                PHAM THI ANH      4\n5   C190348   IM    3M          CHAUDHARI DILLIRAJ      5\n6   C190353   IM    3M            NGUYEN CHI THANH      1\n7   C190370   IM    3M              TAMRAKAR BITTU      2\n8   C190396   IM    3M                 NWE NI HTWE      3\n9   C190402   IM    3M                GURUNG SUDIP      4\n10  C190403   IM    3M               KAUNG MYAT OO      5\n11  C190404   IM    3M                  YAMIN HTET      1\n12  C190415   IM    3M               PRABU PENDAWA      2\n13  C190439   IM    3M                 SAN YEE MOE      3\n14  C190452   IM    3M                 HEIN KO LAT      4\n15  C190455   IM    3M             AYE EAINDRA TUN      5\n16  C190465   IM    3M               SARI YULIANTI      1\n17  C190466   IM    3M             KHOLIFATUN NISA      2\n18  C190467   IM    3M                        呉　九門      3\n19  C190470   IM    3M                        黄　羽岑      4\n20  C190475   IM    3M                        江　玫衡      5\n21  C190477   IM    3M                EPSON NGANGI      1\n22  C190488   IM    3M                        閻　恵鈺      2\n23  C190492   IM    3M                        于　金鑫      3\n24  C190493   IM    3M                        趙　子帰      4\n25  C190495   IM    3M                         薛　奥      5\n26  C180101   IM    4M           NGUYEN TRUNG KIEN      1\n27  C180103   IM    4M           NGUYEN HUNG THANH      2\n28  C180118   IM    4M               PHAM THU THUY      3\n29  C180131   IM    4M              TRUONG VAN LOI      4\n30  C180137   IM    4M  ANG BRYAN CHRISTIAN DY TAN      5\n31  C180143   IM    4M               TRAN HUE NGAN      1\n32  C180159   IM    4M               GIAP VAN SANG      2\n33  C180166   IM    4M                LE DINH MANH      3\n34  C180189   IM    4M                         李　博      4\n35  C180209   IM    4M           TRAN THI UYEN CHI      5\n36  C180210   IM    4M             NGUYEN NGOC SON      1\n37  C180218   IM    4M             NGUYEN HUU THUC      2\n38  C180233   IM    4M            MICHAEL PANGESTU      3\n39  C180234   IM    4M          DOAN THI NGOC THUY      4\n40  C180242   IM    4M                         陸　銘      5\n41  C180249   IM    4M              ISLAM MD RISUL      1\n42  C180250   IM    4M                  SU MON ZAW      2\n43  C180258   IM    4M           NGUYEN THANH CONG      3\n44  C180267   IM    4M                        孫　靖康      4\n45  C180277   IM    4M                        趙　博雯      5\n46  C180288   IM    4M                         張　瑩      1\n47  C180289   IM    4M                   EI EI ZAW      2\n48  C180291   IM    4M                        劉　明研      3\n49  C180292   IM    4M                        金　永山      4\n50  C180293   IM    4M                  SOE SANDAR      5\n",
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "trusted": true
+      },
+      "cell_type": "code",
+      "source": "print(df_ict1.loc[:,'CLASS'])\n",
+      "execution_count": 13,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": "ID\n1     2S\n2     2S\n3     3M\n4     3M\n5     3M\n6     3M\n7     3M\n8     3M\n9     3M\n10    3M\n11    3M\n12    3M\n13    3M\n14    3M\n15    3M\n16    3M\n17    3M\n18    3M\n19    3M\n20    3M\n21    3M\n22    3M\n23    3M\n24    3M\n25    3M\n26    4M\n27    4M\n28    4M\n29    4M\n30    4M\n31    4M\n32    4M\n33    4M\n34    4M\n35    4M\n36    4M\n37    4M\n38    4M\n39    4M\n40    4M\n41    4M\n42    4M\n43    4M\n44    4M\n45    4M\n46    4M\n47    4M\n48    4M\n49    4M\n50    4M\nName: CLASS, dtype: object\n",
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "trusted": true
+      },
+      "cell_type": "code",
+      "source": "s_2s1 = df_ict1{'CLASS'} == '2s'\ns_4m1 = df_ict1{'CLASS'} == '4m'\ns_3m1 = df_ict1{'CLASS'} == '3m'\n\nprint('2S', s_2sl.sum())\nprint('4M', s_4m1.sum())\nprint('3M', s_3m1l.sum())",
+      "execution_count": 9,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "SyntaxError",
+          "evalue": "invalid syntax (<ipython-input-9-0f252fb0b384>, line 1)",
+          "traceback": [
+            "\u001b[0;36m  File \u001b[0;32m\"<ipython-input-9-0f252fb0b384>\"\u001b[0;36m, line \u001b[0;32m1\u001b[0m\n\u001b[0;31m    s_2s1 = df_ict1{'CLASS'} == '2s'\u001b[0m\n\u001b[0m                   ^\u001b[0m\n\u001b[0;31mSyntaxError\u001b[0m\u001b[0;31m:\u001b[0m invalid syntax\n"
+          ]
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "trusted": true
+      },
+      "cell_type": "code",
+      "source": "",
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python36",
+      "display_name": "Python 3.6",
+      "language": "python"
+    },
+    "language_info": {
+      "mimetype": "text/x-python",
+      "nbconvert_exporter": "python",
+      "name": "python",
+      "pygments_lexer": "ipython3",
+      "version": "3.6.6",
+      "file_extension": ".py",
+      "codemirror_mode": {
+        "version": 3,
+        "name": "ipython"
+      }
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 2
+}
